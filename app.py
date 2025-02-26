@@ -3,7 +3,7 @@ import pandas as pd
 from dataset import df
 import plotly.express as px
 from utils import format_number
-from grafico import grafico_map_estado
+from grafico import grafico_map_estado, grafico_receita_mensal
 
 
 def show_data():
@@ -15,14 +15,15 @@ def show_data():
     with aba1:
         st.dataframe(df)
     with aba2:
-        coluna1, coluna2, coluna3 = st.columns(3)
+        coluna1, coluna2= st.columns(2)
         with coluna1:
             st.metric('Receita Total', format_number(df['Preço'].sum(), 'R$'))
-            st.plotly_chart(grafico_map_estado, use_container_width=True)
+            st.plotly_chart(grafico_map_estado, use_container_width=True) 
+            # st.plotly_chart(grafico_receita_estado, use_container_width=True)
         with coluna2:
             st.metric('Quantidade de Vendas', format_number(df.shape[0]))
-        with coluna3:
-            st.metric('Tipo pagamento mais comum', df['Tipo de pagamento'].mode()[0])
+            st.plotly_chart(grafico_receita_mensal, use_container_width=True)
+        
             
             
     with aba3:
