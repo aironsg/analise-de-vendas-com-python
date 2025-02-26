@@ -22,3 +22,6 @@ df_receita_mensal  = df_receita_mensal.reset_index()
 df_receita_mensal['Ano'] = df_receita_mensal['Data da Compra'].dt.year
 df_receita_mensal['Mes'] = df_receita_mensal['Data da Compra'].dt.month_name()
 
+
+# Dateframe receita por categoria
+df_receita_categoria = df.groupby('Categoria do Produto')[['Preço']].sum().sort_values('Preço', ascending=False)

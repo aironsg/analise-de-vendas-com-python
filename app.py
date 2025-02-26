@@ -3,7 +3,7 @@ import pandas as pd
 from dataset import df
 import plotly.express as px
 from utils import format_number
-from grafico import grafico_map_estado, grafico_receita_mensal, grafico_receita_estado
+from grafico import grafico_map_estado, grafico_receita_mensal, grafico_receita_estado, grafico_receita_categoria
 
 
 def show_data():
@@ -23,6 +23,7 @@ def show_data():
         with coluna2:
             st.metric('Quantidade de Vendas', format_number(df.shape[0]))
             st.plotly_chart(grafico_receita_mensal, use_container_width=True)
+            st.plotly_chart(grafico_receita_categoria, use_container_width=True)
         
             
             

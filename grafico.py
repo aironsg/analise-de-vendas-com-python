@@ -1,5 +1,5 @@
 import plotly.express as px
-from utils import df_receita_por_estado, df_receita_mensal
+from utils import df_receita_por_estado, df_receita_mensal, df_receita_categoria
 
 grafico_map_estado = px.scatter_geo(
     df_receita_por_estado,
@@ -38,4 +38,11 @@ grafico_receita_estado = px.bar(
     y='Preço',
     text_auto=True,
     title='TOP Receitas por Estado(UF)'
+)
+
+
+grafico_receita_categoria = px.bar(
+    df_receita_categoria.head(7),
+    text_auto=True,
+    title='Top 7 Categorias'
 )
