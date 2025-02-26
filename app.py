@@ -3,7 +3,7 @@ import pandas as pd
 from dataset import df
 import plotly.express as px
 from utils import format_number
-from grafico import grafico_map_estado, grafico_receita_mensal, grafico_receita_estado, grafico_receita_categoria
+from grafico import grafico_map_estado, grafico_receita_mensal,grafico_receita_estado, grafico_receita_categoria,grafico_receita_vendedor
 
 
 def show_data():
@@ -28,7 +28,7 @@ def show_data():
             
             
     with aba3:
-        ...
+        st.plotly_chart(grafico_receita_vendedor, use_container_width=True)
     
     
     

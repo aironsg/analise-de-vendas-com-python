@@ -1,5 +1,5 @@
 import plotly.express as px
-from utils import df_receita_por_estado, df_receita_mensal, df_receita_categoria
+from utils import df_receita_por_estado, df_receita_mensal, df_receita_categoria, df_receita_vendedor
 
 grafico_map_estado = px.scatter_geo(
     df_receita_por_estado,
@@ -45,4 +45,13 @@ grafico_receita_categoria = px.bar(
     df_receita_categoria.head(7),
     text_auto=True,
     title='Top 7 Categorias'
+)
+
+grafico_receita_vendedor = px.bar(
+    df_receita_vendedor[['sum']].sort_values('sum', ascending=False).head(),
+    x='sum',
+    y= df_receita_vendedor[['sum']].sort_values('sum', ascending=False).head().index,
+    text_auto=True,
+    title='Top 5 Vendedores',
+   
 )
