@@ -22,4 +22,3 @@ df_receita_mensal  = df_receita_mensal.reset_index()
 df_receita_mensal['Ano'] = df_receita_mensal['Data da Compra'].dt.year
 df_receita_mensal['Mes'] = df_receita_mensal['Data da Compra'].dt.month_name()
 
-print(df_receita_mensal)

@@ -14,7 +14,7 @@ grafico_map_estado = px.scatter_geo(
 
 
 
-grafico_receita_mensal = px.line_3d(
+grafico_receita_mensal = px.line(
     df_receita_mensal,
     x='Mes',
     y='Preço',
@@ -32,3 +32,10 @@ grafico_receita_mensal.update_layout(
 )
 
 
+grafico_receita_estado = px.bar(
+    df_receita_por_estado.head(7), # pega os 7 melhores estados de acordo com suas receitas
+    x='Local da compra',
+    y='Preço',
+    text_auto=True,
+    title='TOP Receitas por Estado(UF)'
+)
