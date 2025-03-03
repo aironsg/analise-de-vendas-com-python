@@ -52,6 +52,16 @@ grafico_receita_vendedor = px.bar(
     x='sum',
     y= df_receita_vendedor[['sum']].sort_values('sum', ascending=False).head().index,
     text_auto=True,
-    title='Top 5 Vendedores',
+    title='Top 5 Vendedores produtos por preço',
    
 )
+
+grafico_receita_count_vendedor = px.bar(
+    df_receita_vendedor[['count']].sort_values('count', ascending=False).head(),
+    x='count',
+    y= df_receita_vendedor[['count']].sort_values('count', ascending=False).head().index,
+    text_auto=True,
+    title='Top 5 Vendedores quantidade de produtos',
+   
+)
+
