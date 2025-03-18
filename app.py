@@ -28,8 +28,12 @@ def show_data():
             
             
     with aba3:
-        st.plotly_chart(grafico_receita_vendedor, use_container_width=True)
-        st.plotly_chart(grafico_receita_count_vendedor, use_container_width=True)
+        coluna1,coluna2 = st.columns(2)
+        with coluna1:
+            st.plotly_chart(grafico_receita_vendedor, use_container_width=True)
+        with coluna2:
+            st.plotly_chart(grafico_receita_count_vendedor, use_container_width=True)
+   
     
     
     
